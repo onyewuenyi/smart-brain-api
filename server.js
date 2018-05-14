@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
+const PORT = process.env.PORT || 5000;
 
 // imported  controller files
 const register = require('./controllers/register');
@@ -84,7 +85,7 @@ app.put('/image', (req, res) => image.handleImage(req, res, db));
 
 app.post('/imageurl', (req, res) => image.handleAPICall(req, res));
 
-app.listen(5000, () => console.log('app is running on port 5000'));
+app.listen(PORT, () => console.log('app is running on port ${PORT}'));
 
 
 
