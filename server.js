@@ -8,7 +8,7 @@ const environment = process.env.NODE_ENV || 'development';
 
 // imported  controller files
 const register = require('./controllers/register');
-const start = require('./controllers/start');
+const home = require('./controllers/home');
 const signin = require('./controllers/signin');
 const profile_id = require('./controllers/profile_id');
 const image = require('./controllers/image');
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
 
-app.get('/', (req, res) => start.handleRoot(req, res, db));
+app.get('/', (req, res) => home.handleRoot(req, res, db));
 
 
 app.get('/profile/:id', (req, res) => profile_id.handleProfileGet(req, res, db));
